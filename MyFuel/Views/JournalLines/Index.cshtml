@@ -1,0 +1,38 @@
+﻿@model IEnumerable<MyFuel.Models.JournalLine>
+
+@{
+    ViewData["Title"] = "Журнал заправок";
+}
+
+<h1>Журнал заправок</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>id заправки</th>
+            <th>сколько заправил</th>
+            <th>Название топлива</th>
+            <th>Цена топлива</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Refill_id)</td>
+                <td>@Html.DisplayFor(modelItem => item.RefillValue)</td>
+                <td>(Название топлива)</td>
+                <td>(Цена топлива)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Line_id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Line_id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Line_id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

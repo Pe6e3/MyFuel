@@ -1,0 +1,35 @@
+﻿@model IEnumerable<MyFuel.Models.Price>
+
+@{
+    ViewData["Title"] = "Актуальные цены";
+}
+
+<h1>Актуальные цены</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id цены</th>
+            <th>Цена</th>
+            <th>Id топлива</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                <td>@Html.DisplayFor(modelItem => item.Price_id)</td>
+                <td>@Html.DisplayFor(modelItem => item.PriceValue)</td>
+            <td>@Html.DisplayFor(modelItem => item.Fuel_id)</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Price_id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Price_id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Price_id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
