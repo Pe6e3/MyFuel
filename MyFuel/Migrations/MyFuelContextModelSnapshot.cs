@@ -35,7 +35,7 @@ namespace MyFuel.Migrations
 
                     b.HasKey("Fuel_id");
 
-                    b.ToTable("FuelType");
+                    b.ToTable("FuelType", (string)null);
                 });
 
             modelBuilder.Entity("MyFuel.Models.JournalLine", b =>
@@ -69,7 +69,7 @@ namespace MyFuel.Migrations
 
                     b.HasIndex("Price_id");
 
-                    b.ToTable("JournalLine");
+                    b.ToTable("JournalLine", (string)null);
                 });
 
             modelBuilder.Entity("MyFuel.Models.Price", b =>
@@ -88,7 +88,7 @@ namespace MyFuel.Migrations
 
                     b.HasKey("Price_id");
 
-                    b.ToTable("Price");
+                    b.ToTable("Price", (string)null);
                 });
 
             modelBuilder.Entity("MyFuel.Models.Refill", b =>
@@ -109,7 +109,7 @@ namespace MyFuel.Migrations
 
                     b.HasIndex("FuelTypeFuel_id");
 
-                    b.ToTable("Refill");
+                    b.ToTable("Refill", (string)null);
                 });
 
             modelBuilder.Entity("MyFuel.Models.JournalLine", b =>
